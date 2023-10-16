@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - KillBox
+  - Craig
+  - YellowPortal
+  - Bullet
+  - Craig2
+  - Craig3
   layers:
   - Default
   - TransparentFX

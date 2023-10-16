@@ -11,4 +11,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialScene.unity
     guid: 451f32ef5a1b3974e8da4d611b561761
+  - enabled: 1
+    path: Assets/Scenes/CraigBattleScene.unity
+    guid: b103a6f7ebbb8f341b94d6499b17a8f5
+  - enabled: 1
+    path: Assets/Scenes/CraigVictoryScene.unity
+    guid: a358599ffc8755a48851007b19d88990
+  - enabled: 1
+    path: Assets/Scenes/DeathScene.unity
+    guid: a3fdbc4ef4b003841b02b4b590df892a
   m_configObjects: {}
