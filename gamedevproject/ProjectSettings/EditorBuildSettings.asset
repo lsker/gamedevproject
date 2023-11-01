@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DeathScene.unity
     guid: a3fdbc4ef4b003841b02b4b590df892a
+  - enabled: 1
+    path: Assets/Scenes/PuzzleOneScene.unity
+    guid: 8fbd0f9d629c9ae46b2cb30a77a67128
   m_configObjects: {}
