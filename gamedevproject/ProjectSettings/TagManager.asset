@@ -10,6 +10,10 @@ TagManager:
   - Bullet
   - Craig2
   - Craig3
+  - evilBoss
+  - indieWikiPortal
+  - indieBoss
+  - evilBossBuilding
   layers:
   - Default
   - TransparentFX

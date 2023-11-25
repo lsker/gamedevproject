@@ -23,4 +23,31 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PuzzleOneScene.unity
     guid: 8fbd0f9d629c9ae46b2cb30a77a67128
+  - enabled: 1
+    path: Assets/Scenes/JailScene.unity
+    guid: 5aa928f728db9a94b8d503b940d342b4
+  - enabled: 1
+    path: Assets/Scenes/NewTutorialScene.unity
+    guid: adcb6f6830b3c40459741b0513580c47
+  - enabled: 1
+    path: Assets/Scenes/IndieWikiBuilding.unity
+    guid: 68fac6a70eae246408e5afbbcaa9a426
+  - enabled: 1
+    path: Assets/Scenes/SecondStreetScene.unity
+    guid: 3cc8b10348e9af34293f09effb7363e6
+  - enabled: 1
+    path: Assets/Scenes/IndieBossBattle.unity
+    guid: 98662f70338b7554aa574e4633ad97ec
+  - enabled: 1
+    path: Assets/Scenes/TheGoodEndingScene.unity
+    guid: afaee65fca98e0c42ab8200ce06a6623
+  - enabled: 1
+    path: Assets/Scenes/ThirdStreetScene.unity
+    guid: cb4a256700cf4354b9999ee6434b7be6
+  - enabled: 1
+    path: Assets/Scenes/MeetingTheBossScene.unity
+    guid: b1a01bb60698311439b2e7cacd87c6cf
+  - enabled: 1
+    path: Assets/Scenes/EvilBossScene.unity
+    guid: 43e571e134b1e614f97f0c10b87d5817
   m_configObjects: {}

@@ -5,6 +5,8 @@ using UnityEngine;
 public class craigScript : MonoBehaviour
 {
     [SerializeField] GameObject atkButton;
+    [SerializeField] GameObject goodResponseButton;
+    [SerializeField] GameObject badResponseButton;
     // Start is called before the first frame update
     void Awake(){
         
@@ -20,6 +22,14 @@ public class craigScript : MonoBehaviour
         GetComponent<AudioSource>().Play();
         atkButton.SetActive(false);
     }
+
+    /*public void goodIntroduction(){
+        GetComponent<SpriteRenderer>().color = new Color(178, 255, 188, 1f);
+        Debug.Log("good intro pressed");
+        GetComponent<AudioSource>().Play();
+        goodResponseButton.SetActive(false);
+        badResponseButton.SetActive(false);
+    }*/
 
     // Update is called once per frame
     void Update()

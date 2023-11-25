@@ -10,10 +10,18 @@ public class BulletSpawnerScript : MonoBehaviour
     [SerializeField] GameObject startText;
     [SerializeField] GameObject secondText;
     [SerializeField] GameObject finalText;
+    [SerializeField] GameObject welcomeInText;
 
     [SerializeField] GameObject attackButton;
+    [SerializeField] GameObject goodResponseButton;
+    [SerializeField] GameObject badResponseButton;
+    
+    bool hasBeenAttacked=false;
+    bool hasResponded=false;
     bool isntDone = true;
     bool tempBool=true;
+    bool goodAttackTaken=false;
+    bool goToVictoryScene=false;
      /*IEnumerator AttackManager(){
         
         yield return null;
@@ -27,10 +35,39 @@ public class BulletSpawnerScript : MonoBehaviour
         startText.SetActive(false);
         secondText.SetActive(false);
         finalText.SetActive(false);
+        welcomeInText.SetActive(false);
         attackButton.SetActive(false);
+        goodResponseButton.SetActive(false);
+        badResponseButton.SetActive(false);
         StartCoroutine(AttackScript());
     }
 
+    public void attacked(){
+        Debug.Log("attack bullet spawner gotten");
+        finalText.SetActive(true);
+        hasBeenAttacked=true;
+    }
+    
+    public void goodIntroduction(){
+        //GetComponent<SpriteRenderer>().color = new Color(178, 255, 188, 1f);
+        Debug.Log("good intro pressed");
+        goodAttackTaken=true;
+        hasResponded=true;
+        //GetComponent<AudioSource>().Play();
+        goodResponseButton.SetActive(false);
+        badResponseButton.SetActive(false);
+    }
+
+    public void badIntroduction(){
+        //GetComponent<SpriteRenderer>().color = new Color(178, 255, 188, 1f);
+        Debug.Log("bad intro pressed");
+        hasResponded=true;
+        goodAttackTaken=false;
+        //GetComponent<AudioSource>().Play();
+        goodResponseButton.SetActive(false);
+        badResponseButton.SetActive(false);
+    }
+    
     //void AsgoreAttack(){
         
 
@@ -98,25 +135,42 @@ public class BulletSpawnerScript : MonoBehaviour
             
             while(isntDone){
                 startText.SetActive(true);
-                yield return new WaitForSeconds(3);
-                startText.SetActive(false);
+                yield return new WaitForSeconds(2);
                 StartCoroutine(SpawnBullets());
                 yield return new WaitForSeconds(10);
+                startText.SetActive(false);
                 StopCoroutine(SpawnBullets());
-                attackButton.SetActive(true);
-                secondText.SetActive(true);
-                yield return new WaitForSeconds(5);
-                attackButton.SetActive(false);
+                while(!hasResponded){
+                    //attackButton.SetActive(true);
+                    secondText.SetActive(true);
+                    goodResponseButton.SetActive(true);
+                    badResponseButton.SetActive(true);
+                    yield return new WaitForSeconds(3);
+                }
+                //attackButton.SetActive(false);
+                goodResponseButton.SetActive(false);
+                badResponseButton.SetActive(false);
                 secondText.SetActive(false);
-                StartCoroutine(SpawnAsgoreAttack());
-                yield return new WaitForSeconds(19);
-                StopCoroutine(SpawnAsgoreAttack());
-                finalText.SetActive(true);
-                attackButton.SetActive(true);
-                yield return new WaitForSeconds(6);
-                finalText.SetActive(false);
-                attackButton.SetActive(false);
-                tempBool=false;
+                if(goodAttackTaken==false){
+                    StartCoroutine(SpawnAsgoreAttack());
+                    yield return new WaitForSeconds(19);
+                    StopCoroutine(SpawnAsgoreAttack());
+                    //finalText.SetActive(true);
+                    attackButton.SetActive(true);
+                    while(!hasBeenAttacked){
+                        yield return new WaitForSeconds(6);
+                    }
+                    finalText.SetActive(false);
+                    attackButton.SetActive(false);
+                    tempBool=false;
+                }
+                if(goodAttackTaken==true){
+                    welcomeInText.SetActive(true);
+                    yield return new WaitForSeconds(6);
+                    goToVictoryScene=true;
+                    
+                }
+                
             }
             isntDone=false;
             yield return null;
@@ -168,8 +222,11 @@ public class BulletSpawnerScript : MonoBehaviour
 
     void Update(){
         if(!tempBool ){
-            
-            SceneManager.LoadScene("CraigVictoryScene");
+            SceneManager.LoadScene("JailScene");
+            //SceneManager.LoadScene("CraigVictoryScene");
+        }
+        if(goToVictoryScene){
+            SceneManager.LoadScene("MeetingTheBossScene");
         }
     }
 

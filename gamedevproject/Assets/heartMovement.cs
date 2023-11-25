@@ -33,22 +33,22 @@ public class heartMovement : MonoBehaviour
     {
         if(Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.D)){
         if(Input.GetKey(KeyCode.A)){
-            transform.Translate(new Vector3(-1 *Time.deltaTime,1 *Time.deltaTime,0));
+            transform.Translate(new Vector3(-1 *Time.deltaTime * speed,0,0));
             //why do i need to move the y up???????
 
             //rb.velocity=new Vector3(0,0,0);
             //MoveRB(new Vector3(-1,rb.velocity.y / speed,0));
         }else if(Input.GetKey(KeyCode.D)){
             //MoveRB(new Vector3(1,rb.velocity.y / speed,0));
-            transform.Translate(new Vector3(1*Time.deltaTime,1 *Time.deltaTime,0));
+            transform.Translate(new Vector3(1*Time.deltaTime * speed,0,0));
             //why do i need this
             //rb.velocity=new Vector3(0,0,0);
         }
         if(Input.GetKey(KeyCode.W)){
-            transform.Translate(new Vector3(0,1*Time.deltaTime,0));
+            transform.Translate(new Vector3(0,1*Time.deltaTime * speed,0));
             //rb.velocity = new Vector3(rb.velocity.x,1,0);
-        }else{
-            transform.Translate(new Vector3(0,-1*Time.deltaTime,0));
+        }else if(Input.GetKey(KeyCode.S)){
+            transform.Translate(new Vector3(0,-1*Time.deltaTime * speed,0));
             //rb.velocity = new Vector3(rb.velocity.x,-1,0);
         }}else{
             rb.velocity=new Vector3(0,0,0);
